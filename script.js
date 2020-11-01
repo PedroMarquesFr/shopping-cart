@@ -41,6 +41,8 @@ const setLocalSave = () => {
 };
 
 function cartItemClickListenerRemove(event) {
+  const price = parseInt(event.target.innerHTML.split('$')[1]);
+  totalSum(-price);
   event.target.remove();
   setLocalSave();
 }
@@ -48,13 +50,12 @@ function cartItemClickListenerRemove(event) {
 function createCartItemElement({ id: sku, title: name, price: salePrice }) {
   const li = document.createElement('li');
 
-  const formatPrice = Number.parseFloat(salePrice.toFixed(2), 10);
+  const formatPrice = parseInt(salePrice);
 
   li.className = 'cart__item';
   li.innerText = `SKU: ${sku} | NAME: ${name} | PRICE: $${salePrice}`;
   li.addEventListener('click', (event) => {
     cartItemClickListenerRemove(event);
-    totalSum(-formatPrice);
   });
 
   totalSum(formatPrice);
@@ -132,13 +133,14 @@ const handleAPIRequest = async (API_REQ) => {
 
 const getLocalSave = () => {
   const currentSave = localStorage.getItem('Cart_Items');
+  const sumPrices = parseInt(localStorage.getItem('Cart_Sum'));
 
   const list = document.querySelector('.cart__items');
   list.innerHTML = currentSave;
   document.querySelectorAll('.cart__item').forEach((item) => {
     item.addEventListener('click', cartItemClickListenerRemove);
   });
-  totalSum();
+  totalSum(sumPrices);
   return currentSave;
 };
 
