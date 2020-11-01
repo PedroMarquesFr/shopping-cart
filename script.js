@@ -89,11 +89,19 @@ const productItemClickListener = (event) => {
   handleAPIRequestToPrice(`https://api.mercadolibre.com/items/${id}`);
 };
 
+let counter = 0;
 function createCustomElement(element, className, innerText) {
   const e = document.createElement(element);
   if (element === 'button') {
     e.addEventListener('click', productItemClickListener);
+
+    e.addEventListener('click', () => {
+      counter += 1;
+      console.log('asd');
+      document.querySelector('.new-item').innerHTML = counter;
+    });
   }
+
   e.className = className;
   e.innerText = innerText;
   return e;
@@ -152,6 +160,8 @@ const getLocalSave = () => {
 const setupEventHandlers = () => {
   document.querySelector('.empty-cart').addEventListener('click', () => {
     document.querySelector('.cart__items').innerHTML = '';
+    counter = 0;
+    document.querySelector('.new-item').innerHTML = 0;
     totalSum(-totalSum());
     setLocalSave();
   });
