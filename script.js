@@ -1,5 +1,11 @@
 const changeLoadingState = () => {
-  document.querySelector('.loading').remove();
+  if (document.querySelector('.loading')) {
+    document.querySelector('.loading').remove();
+  } else {
+    let loading = document.createElement('div');
+    loading.classList.add('loading');
+    document.querySelector('.items').appendChild(loading);
+  }
 };
 
 function createProductImageElement(imageSource) {
@@ -71,7 +77,6 @@ const handleAPIRequestToPrice = (API_REQ) => {
       if (res.error) {
         throw new Error(res.error);
       }
-      console.log(res);
       addToHTML('.cart__items', createCartItemElement(res));
       setLocalSave();
     })
@@ -99,11 +104,12 @@ function createProductItemElement({ id: sku, title: name, thumbnail: image }) {
   section.className = 'item';
 
   section.appendChild(createCustomElement('span', 'item__sku', sku));
-  section.appendChild(createCustomElement('span', 'item__title', name));
   section.appendChild(createProductImageElement(image));
+  section.appendChild(createCustomElement('span', 'item__title', name));
   section.appendChild(
     createCustomElement('button', 'item__add', 'Adicionar ao carrinho!'),
   );
+  console.log(section);
   return section;
 }
 
@@ -124,7 +130,6 @@ const handleAPIRequest = async (API_REQ) => {
     if (jso.error) {
       throw new Error(jso.error);
     }
-    console.log(jso);
     handleAmountOfElementsOnHTML(jso.results);
   } catch (error) {
     showAlert(error);
@@ -149,6 +154,12 @@ const setupEventHandlers = () => {
     document.querySelector('.cart__items').innerHTML = '';
     totalSum(-totalSum());
     setLocalSave();
+  });
+  document.querySelector('.searcher-button').addEventListener('click', () => {
+    const key = document.querySelector('.searcher').value;
+    document.querySelector('.items').innerHTML = '';
+    changeLoadingState();
+    handleAPIRequest(`https://api.mercadolibre.com/sites/MLB/search?q=${key}`);
   });
 };
 window.onload = function onload() {

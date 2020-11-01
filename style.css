@@ -1,3 +1,10 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Rajdhani', sans-serif;
+}
+
 .top-bar {
   align-items: center;
   display: flex;
@@ -19,6 +26,7 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   width: 100%;
 }
@@ -31,11 +39,13 @@
 }
 
 .item {
-  border: 2px solid blue;
-  border-radius: 5px;
+  border: none;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.26);
+  border-radius: 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   height: auto;
   margin: 5px;
   width: 200px;
@@ -49,18 +59,23 @@
   flex-grow: 1;
   padding: 10px;
   text-align: center;
+  opacity: 0.8;
 }
 
 .item .item__image {
-  width: 100%;
+  width: 70%;
+  margin: auto;
 }
 
 .item .item__add {
-  background-color: green;
+  background-color: #40cd28;
   border: 0;
   cursor: pointer;
   margin: 0;
-  padding: 5px;
+  padding: 5px 30px;
+
+  color: white;
+  font-weight: 600;
 }
 
 .cart {
@@ -90,4 +105,50 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.loading {
+  margin-top: 80px;
+}
+
+header {
+  height: 52px;
+  width: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: black;
+}
+h1 {
+  color: white;
+  font-weight: 800;
+}
+input {
+  border: 1px solid rgb(24, 23, 23);
+  padding: 5px 10px;
+  background-color: rgb(63, 63, 63);
+  border-radius: 15px;
+  color: white;
+}
+input::placeholder {
+  color: white;
+  text-align: center;
+}
+
+.cart {
+  position: absolute;
+  top: 54px;
+  right: 2px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.cart-button {
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  border: none;
+  background-color: rgb(221, 82, 82);
 }

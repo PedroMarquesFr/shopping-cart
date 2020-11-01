@@ -4,22 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>Your Shop</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <section class="container">
+      <header>
+        <h1>Your Shop</h1>
+        <div>
+          <input type="text" class="searcher" placeholder="Pesquisar produto" />
+          <button class="searcher-button">buscar</button>
+        </div>
+        <button class="cart-button">1</button>
+      </header>
+
       <section class="items">
         <div class="loading"></div>
       </section>
-      <section class="cart">
-        <span class="cart__title">Carrinho de compras</span>
-        <button class="empty-cart">Esvaziar carrinho</button>
-        <ol class="cart__items"></ol>
-        <p>Preco total: $<span class="total-price">0</span></p>
-      </section>
+      <div>
+        <section class="cart">
+          <span class="cart__title">Carrinho de compras</span>
+          <button class="empty-cart">Esvaziar carrinho</button>
+          <ol class="cart__items"></ol>
+          <p>Preco total: $<span class="total-price">0</span></p>
+        </section>
+      </div>
     </section>
   </body>
 </html>
