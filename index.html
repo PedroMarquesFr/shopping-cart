@@ -11,13 +11,14 @@
       href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap"
       rel="stylesheet"
     />
+    <script src="https://kit.fontawesome.com/04949757f5.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
     <section class="container">
       <header>
-        <div>
-          <!-- <img class="mall" src="./icons/loja.svg" alt="" /> -->
+        <div class="logo_wrapper">
+          <img class="mall-icon" src="./icons/local_mall-white-18dp.svg" alt="">
           <h1>Your Shop</h1>
         </div>
 
@@ -26,7 +27,8 @@
           <button class="searcher-button">Buscar</button>
         </div>
         <div>
-          <button  onclick="displayCart()" class="cart-button">1</button>
+
+          <button  onclick="displayCart()" class="cart-button"><i class="fas fa-shopping-cart fa-2x"></i><div class="new-item">1</div></button>
           <section class="cart">
             <span class="cart__title">Carrinho de compras</span>
             <button class="empty-cart">Esvaziar carrinho</button>
