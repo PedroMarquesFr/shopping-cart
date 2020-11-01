@@ -3,6 +3,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Rajdhani', sans-serif;
+  background-color: rgb(236, 235, 241);
 }
 
 .top-bar {
@@ -49,6 +50,8 @@ body {
   height: auto;
   margin: 5px;
   width: 200px;
+
+  background-color: white;
 }
 
 .item .item__sku {
@@ -106,30 +109,35 @@ body {
     transform: rotate(360deg);
   }
 }
-
 .loading {
   margin-top: 80px;
 }
 
 header {
-  height: 52px;
+  height: 100px;
   width: auto;
 
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   background-color: black;
+
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 h1 {
   color: white;
   font-weight: 800;
 }
 input {
-  border: 1px solid rgb(24, 23, 23);
-  padding: 5px 10px;
-  background-color: rgb(63, 63, 63);
-  border-radius: 15px;
+  border: none;
+  padding: 20px 18px;
+  background-color: rgb(73, 73, 73);
+
   color: white;
+  position: relative;
 }
 input::placeholder {
   color: white;
@@ -138,11 +146,13 @@ input::placeholder {
 
 .cart {
   position: absolute;
-  top: 54px;
-  right: 2px;
+  top: 106px;
+  right: 36px;
   background-color: #fff;
   padding: 20px;
   border-radius: 30px;
+
+  z-index: 2;
 }
 
 .cart-button {
@@ -151,4 +161,32 @@ input::placeholder {
   border-radius: 30px;
   border: none;
   background-color: rgb(221, 82, 82);
+  cursor: pointer;
+}
+
+.mall {
+  fill: white;
+  color: white;
+}
+
+.searcher-button {
+  border: none;
+  background-color: rgb(92, 92, 250);
+  padding: 20px 8px;
+  color: white;
+
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+
+  cursor: pointer;
+}
+.button-wrapper {
+  overflow: hidden;
+  width: 251px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+
+  border-radius: 20px;
 }
