@@ -126,6 +126,8 @@ header {
   top: 0;
   left: 0;
   z-index: 1;
+
+  margin-bottom: 30px;
 }
 h1 {
   color: white;
