@@ -97,7 +97,7 @@ function createCustomElement(element, className, innerText) {
 
     e.addEventListener('click', () => {
       counter += 1;
-      console.log('asd');
+      console.log('adiconado no carrinho');
       document.querySelector('.new-item').innerHTML = counter;
     });
   }

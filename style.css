@@ -3,7 +3,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Rajdhani', sans-serif;
-  background-color: rgb(236, 235, 241);
+  background-color: #f5f7fb;
 }
 
 .top-bar {
@@ -79,12 +79,22 @@ body {
 
   color: white;
   font-weight: 600;
+
+  transition: background-color 0.2s;
+}
+
+.item .item__add:hover {
+  background-color: #50e935;
 }
 
 .cart {
   display: flex;
   flex-basis: 30%;
   flex-flow: column wrap;
+
+  animation-name: popup;
+  animation-duration: 300ms;
+  animation-fill-mode: forwards;
 }
 
 .cart .cart__title {
@@ -111,6 +121,18 @@ body {
 }
 .loading {
   margin-top: 80px;
+}
+
+/* POPUP ANIMATION */
+@keyframes popup {
+  from {
+    background-color: rgb(255, 255, 255, 0);
+    top: 0px;
+  }
+  to {
+    background-color: rgb(255, 255, 255, 1);
+    top: 70px;
+  }
 }
 
 header {
@@ -153,7 +175,7 @@ input::placeholder {
   right: 36px;
   background-color: #fff;
   padding: 20px;
-  border-radius: 30px;
+  border-radius: 8px;
 
   box-shadow: 0px 0px 17px 0px rgba(50, 50, 50, 0.75);
 
@@ -188,6 +210,8 @@ input::placeholder {
   cursor: pointer;
 
   position: relative;
+
+  margin-left: 30px;
 }
 
 .new-item {
@@ -237,4 +261,9 @@ input::placeholder {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.search-cart {
+  display: flex;
+  align-items: center;
 }
