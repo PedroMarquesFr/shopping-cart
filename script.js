@@ -182,10 +182,5 @@ window.onload = function onload() {
 
 const displayCart = () => {
   let cartElement = document.querySelector('.cart');
-  console.log(cartElement);
-  if (cartElement.style.visibility === 'hidden') {
-    cartElement.style.visibility = 'visible';
-  } else {
-    cartElement.style.visibility = 'hidden';
-  }
+  cartElement.classList.toggle('visibility');
 };
