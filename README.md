@@ -6,7 +6,7 @@
 
 A [API do Mercado Livre](https://developers.mercadolivre.com.br/pt_br/itens-e-buscas) foi usada na criacao pesso projeto. Este projeto teve como objetivo:
 
-- Solidicar os conhecimento acerca de JavaScript, CSS e HTML;
+- Solidificar os conhecimento acerca de JavaScript, CSS e HTML;
 - Checar os conhecimento acerca de JavaScript assíncrono através do uso da API do mercado livre.
 
 ## Requisitos do projeto:
